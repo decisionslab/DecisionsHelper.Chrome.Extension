@@ -26,6 +26,12 @@ chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
 
     openInEdgeLink.href = 'microsoft-edge:' + urlStr;
 
+    console.log(urlStr);
+    if(urlStr == "about:blank") {
+        generateDashboardUrls();
+        return;
+    }
+
     const url = new URL(urlStr);
 
     const elements = decisionsHosts.map(x => {
@@ -45,4 +51,15 @@ chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
 });
 
 
+function generateDashboardUrls() {
+
+    $('#envHeaderTxt').text('Dashboards:');
+    const elements = decisionsHosts.map(x => {
+
+        newUrl = new URL(`https://${x.host}:${x.port? x.port : 443}/web/#/dashboard` );
+        return `<a class="block p-2 mt-2 hover:text-blue" style="border: solid 1px silver" href="${newUrl}" target="_blank">${x.name} Dashboard</a>`
+    }).join(' ');
+
+    otherLinks.append(elements);
+}
 

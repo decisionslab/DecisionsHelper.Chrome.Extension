@@ -4,7 +4,9 @@ const decisionsHosts = [
     { name: 'Localhost', host: 'localhost' },
     { name: 'Develop', host: 'devapp.boarddecisions.com' },
     { name: 'Feature', host: 'decisionsfeature.azurewebsites.net' },
-    { name: 'Master', host: 'decisionsweb-main-test.azurewebsites.net' }
+    { name: 'Master', host: 'decisionsweb-main-test.azurewebsites.net' },
+    { name: 'Blank', host: '' },
+
 ];
 
 
