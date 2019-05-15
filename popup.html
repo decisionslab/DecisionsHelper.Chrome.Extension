@@ -8,16 +8,25 @@
 
 <body style="width:500px; height:300px" class="bg-gray-500">
     <div class="p-4 bg-gray-300 h-full">
-        <div>
-            <a class="border-solid border-1" id="openInEdgeLink" target="_blank"><img class="inline h-4" src="images/edge.png"> Open in
-                Edge</span></a>
+        <div class="absolute left-0 pl-2">
+            <div>
+                <a class="border-solid border-1" id="openInEdgeLink" target="_blank"><img class="inline h-4"
+                        src="images/edge.png"> Open in
+                    Edge</span></a>
 
+
+
+            </div>
+
+            <div id="otherLinks">
+
+            </div>
         </div>
-
         <div class="p-4 insect-y-0 right-0 absolute">
             <div id="qrcode"></div>
         </div>
     </div>
+    <script src="jquery.min.js"></script>
     <script src="qrcode.min.js"></script>
     <script src="popup.js"></script>
 </body>
