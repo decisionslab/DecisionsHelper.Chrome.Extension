@@ -9,17 +9,17 @@
 <body style="width:500px; height:300px" class="bg-gray-500">
     <div class="p-4 bg-gray-300 h-full">
         <div>
-            <a id="openInEdgeLink"  target="_blank"><img class="inline h-4" src="images/edge.png"> Open in Edge</span></a>
-
-            <a href="firefox://https://google.com"><img class="inline h-4" src="images/edge.png"> Open in firefox</span></a>
+            <a class="border-solid border-1" id="openInEdgeLink" target="_blank"><img class="inline h-4" src="images/edge.png"> Open in
+                Edge</span></a>
 
         </div>
 
-        <div id="qrcode" style="width:100px; height:100px; margin-top:15px;"></div>
-
+        <div class="p-4 insect-y-0 right-0 absolute">
+            <div id="qrcode"></div>
+        </div>
     </div>
     <script src="qrcode.min.js"></script>
-    <script src="popup.js" ></script>
+    <script src="popup.js"></script>
 </body>
 
 </html>
