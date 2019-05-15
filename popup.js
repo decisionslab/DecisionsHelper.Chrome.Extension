@@ -45,6 +45,7 @@ chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
         return `<a class="block p-2 mt-2 hover:text-blue" style="border: solid 1px silver" href="${newUrl}" target="_blank">Open same page in ${x.name}</a>`
     }).join(' ');
 
+    $('#defaultImg').hide();
 
     otherLinks.append(elements);
     qrcode.makeCode(urlStr);
@@ -54,6 +55,7 @@ chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
 function generateDashboardUrls() {
 
     $('#envHeaderTxt').text('Dashboards:');
+    $('#qrcode').hide();
     const elements = decisionsHosts.map(x => {
 
         newUrl = new URL(`https://${x.host}:${x.port? x.port : 443}/web/#/dashboard` );
