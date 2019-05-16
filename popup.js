@@ -56,6 +56,8 @@ function generateDashboardUrls() {
 
     $('#envHeaderTxt').text('Dashboards:');
     $('#qrcode').hide();
+    $('#defaultImg').show();
+
     const elements = decisionsHosts.map(x => {
 
         newUrl = new URL(`https://${x.host}:${x.port? x.port : 443}/web/#/dashboard` );
