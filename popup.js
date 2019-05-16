@@ -4,13 +4,14 @@
     const otherLinks = $('#otherLinks');
     const qrCodeElement = $('#qrCode');
 
+    const nonDecisionsUrls = ['about:blank', 'chrome-search://local-ntp/local-ntp.html']
+
     chrome.tabs.query({ 'active': true, 'lastFocusedWindow': true }, function (tabs) {
         var urlStr = tabs[0].url;
 
-        openInEdgeLink.href = 'microsoft-edge:' + urlStr;
+        openInEdgeLink.attr('href', 'microsoft-edge:' + urlStr);
 
-        console.log(urlStr);
-        if (urlStr == "about:blank") {
+        if (nonDecisionsUrls.indexOf(urlStr) !== -1) {
             generateDashboardUrls();
             return;
         }
