@@ -1,0 +1,19 @@
+{
+    "name": "Decisions Helper",
+    "author": "Decisions",
+    "version": "1.0",
+    "description": "Change the color of the body on docs.microsoft.com",
+    "permissions": [
+      "*://app.boarddecisions.com/*",
+      "https://devapp.boarddecisions.com/*",
+      "tabs"
+    ], 
+    "browser_action": {
+      "default_icon": {
+        "20": "images/ic_16x16.png",
+        "40": "images/ic_32x32.png"
+      },
+      "default_title": "Decisions Helper",
+      "default_popup": "popup.html"
+    }
+  }
