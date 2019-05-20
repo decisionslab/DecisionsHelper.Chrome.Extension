@@ -6,7 +6,7 @@
 
     const nonDecisionsUrls = ['about:blank', 'chrome-search://local-ntp/local-ntp.html']
 
-    chrome.tabs.query({ 'active': true, 'lastFocusedWindow': true }, function (tabs) {
+    window.browser.tabs.query({ 'active': true, 'lastFocusedWindow': true }, function (tabs) {
         var urlStr = tabs[0].url;
 
         openInEdgeLink.attr('href', 'microsoft-edge:' + urlStr);
