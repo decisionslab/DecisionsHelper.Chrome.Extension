@@ -6,7 +6,9 @@ Chrome plugin to switch Decisions between test environments, generate QR code to
 Installation instructions:
 1. git clone https://github.com/sharmajnu/DecisionsHelper.Chrome.Extension.git
 2. Open command prompt and run
+
     a. build chrome (to build the Chrome Extension)
+    
     b. build edge (to build the Chrome Extension)
 
 3. Load the extension by following the browser instructions.
