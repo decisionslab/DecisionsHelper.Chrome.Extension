@@ -4,14 +4,14 @@
     const otherLinks = $('#otherLinks');
     const qrCodeElement = $('#qrCode');
 
-    const nonDecisionsUrls = ['about:blank', 'chrome-search://local-ntp/local-ntp.html']
+    function renderPopupBody(tabs) {
 
-    window.browser.tabs.query({ 'active': true, 'lastFocusedWindow': true }, function (tabs) {
         var urlStr = tabs[0].url;
 
         openInEdgeLink.attr('href', 'microsoft-edge:' + urlStr);
 
-        if (nonDecisionsUrls.indexOf(urlStr) !== -1) {
+        const host = (new URL(urlStr)).host;
+        if (!window.decisionsData.allHosts.find(x => host.toLowerCase().indexOf(x.host.toLowerCase()) !== -1)) {
             generateDashboardUrls();
             return;
         }
@@ -26,7 +26,7 @@
             } else {
                 newUrl.port = 443;
             }
-            return `<a class="block p-2 mt-2 hover:text-blue" style="border: solid 1px silver" href="${newUrl}" target="_blank">Open same page in ${x.name}</a>`
+            return `<a class="block p-2 mt-2 text-center border-gray-400 text-gray-700 border border-2 hover:bg-blue-500 hover:text-white" href="${newUrl}" target="_blank">Switch to ${x.name}</a>`
         }).join(' ');
 
         $('#defaultImg').hide();
@@ -36,8 +36,16 @@
             width: 150,
             height: 150
         });
-    
+
         qrCode.makeCode(urlStr);
+
+    }
+
+    window.browser.tabs.query({ 'active': true, 'lastFocusedWindow': true }, function (tabs) {
+        setTimeout(() => {
+            renderPopupBody(tabs);
+        }, 0);
+
     });
 
 
@@ -50,7 +58,7 @@
         const elements = window.decisionsData.allHosts.map(x => {
 
             newUrl = new URL(`https://${x.host}:${x.port ? x.port : 443}/web/#/dashboard`);
-            return `<a class="block p-2 mt-2 hover:text-blue" style="border: solid 1px silver" href="${newUrl}" target="_blank">${x.name} Dashboard</a>`
+            return `<a class="block p-2 mt-2 text-center border-gray-400 text-gray-700 border border-2 hover:bg-blue-500 hover:text-white" href="${newUrl}" target="_blank">${x.name} Dashboard</a>`
         }).join(' ');
 
         otherLinks.append(elements);

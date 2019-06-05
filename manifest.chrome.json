@@ -2,13 +2,7 @@
     "name": "Decisions Helper",
     "version": "1.0",
     "description": "This extensions helps in testing decisions, it lists all test environments, possibility to switch environments etc.",
-    "background": {
-        "scripts": [
-            "background.js"
-        ],
-        "persistent": false
-    },
-    "page_action": {
+    "browser_action": {
         "default_popup": "popup.html",
         "default_title": "Decisions testing helper",      // optional; shown in tooltip
 
