@@ -5,25 +5,25 @@
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body style="width:500px; height:350px" class="bg-gray-100">
+<body style="width:450px; height:350px" class="bg-gray-800">
     <div class="p-4 h-full flex">
         <div class="flex-col pl-2">
             <div>
-                <span class="text-lg pb-2 block">Switch Browsers:</span>
+                <span class="text-lg pb-2 block text-gray-400">Switch Browsers:</span>
 
                 <a class="border-solid border-1" id="openInEdgeLink" target="_blank"><img class="inline h-4"
                         src="images/edge.png" title="Microsoft Edge"></a>
             </div>
 
             <div id="otherLinks" class="pt-4">
-                <span class="text-lg" id="envHeaderTxt">Switch Environments:</span>
+                <span class="text-lg text-gray-400" id="envHeaderTxt">Switch Environments:</span>
             </div>
         </div>
         <div class="p-4 flex flex-auto justify-center">
-            <a id="defaultImg" style="display: none" href="https://app.boarddecisions.com/web/#/dashboard" target="_blank"><img
-                    style="height: 196px; width: 196px;"  src="images/ic_196x196.png"></a>
-            <div class="flex flex-col justify-center">
-                <div id="qrCode"></div>
+            <a id="defaultImg" style="display: none" href="https://app.boarddecisions.com/web/#/dashboard"
+                target="_blank"><img style="height: 196px; width: 196px;" src="images/ic_196x196.png"></a>
+            <div class="flex flex-col justify-center p-2">
+                <div id="qrCode" class="p-1 bg-white"></div>
             </div>
         </div>
     </div>
