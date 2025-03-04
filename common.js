@@ -11,6 +11,9 @@
         { name: 'Feature2', host: 'feature2.boarddecisions.com' },
         { name: 'Master', host: 'master.boarddecisions.com' },
         { name: 'Kaveri', host: 'kaveri.boarddecisions.com' },
+        { name: 'Karnali', host: 'karnali.boarddecisions.com' },
+        { name: 'Krishna', host: 'krishna.boarddecisions.com' },
+        { name: 'Monetization', host: 'monetization.boarddecisions.com' },
     ];
 
     window.browser = window.browser || window.chrome;
